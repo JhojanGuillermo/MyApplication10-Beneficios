@@ -6,6 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import ugarte.tecsup.com.myapplication10.models.Beneficio;
+import ugarte.tecsup.com.myapplication10.models.Event;
 import ugarte.tecsup.com.myapplication10.models.Noticia;
 
 /**
@@ -28,4 +29,10 @@ public interface ApiService {
     @GET("api/v1/noticias/{id}")
     Call<Noticia> getNoticias(@Path("id") Integer id);
 
+    @GET("api/v1/eventos")
+    Call<List<Event>> listEvent();
+
+    @GET("api/v1/eventos/{id}")
+    Call<Event> getEvent(@Path("id") Integer id);
 }
+

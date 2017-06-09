@@ -11,6 +11,7 @@ import ugarte.tecsup.com.myapplication10.R;
 public class MainActivity extends AppCompatActivity {
 
     ImageButton noticias;
+    ImageButton eventos;
     ImageButton beneficios;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent noticia = new Intent(MainActivity.this, NoticiaActivity.class);
                 startActivity(noticia);
+            }
+        });
+
+        eventos = (ImageButton) findViewById(R.id.imageButton1);
+        eventos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent evento = new Intent(MainActivity.this, EventActivity.class);
+                startActivity(evento);
             }
         });
 

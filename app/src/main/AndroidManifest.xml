@@ -19,7 +19,10 @@
         </activity>
         <activity android:name=".activities.BeneficioActivity" />
         <activity android:name=".activities.NoticiaActivity" />
-        <activity android:name=".activities.NoticiaDetalleActivity"></activity>
+        <activity android:name=".activities.NoticiaDetalleActivity" />
+        <activity android:name=".activities.EventActivity" />
+        <activity android:name=".activities.EventDetalleActivity" />
+        <activity android:name=".activities.FullImageActivity"></activity>
     </application>
 
 </manifest>
