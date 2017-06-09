@@ -1,4 +1,4 @@
-package ugarte.tecsup.com.myapplication10;
+package ugarte.tecsup.com.myapplication10.models;
 
 /**
  * Created by JShanksX13 on 9/06/2017.

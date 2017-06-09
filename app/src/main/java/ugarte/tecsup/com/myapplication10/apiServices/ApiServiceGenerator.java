@@ -1,8 +1,9 @@
-package ugarte.tecsup.com.myapplication10;
+package ugarte.tecsup.com.myapplication10.apiServices;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import ugarte.tecsup.com.myapplication10.apiServices.ApiService;
 
 /**
  * Created by JShanksX13 on 6/06/2017.

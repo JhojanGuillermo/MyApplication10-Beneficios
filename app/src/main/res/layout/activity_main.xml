@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="4dp"
+    android:orientation="vertical">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/beneficios_list"
+
+    <ImageButton
+        android:id="@+id/imageButton1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="8dp" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_height="160dp"
+        android:layout_marginTop="1dp"
+        android:layout_gravity="center"
+        android:onClick="secondImageButton"
+        android:scaleType="centerCrop"
+        android:src="@drawable/eventoss" />
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="6dp"
+        android:layout_gravity="center"
+        android:onClick="secondImageButton"
+        android:scaleType="centerCrop"
+        android:src="@drawable/beneficios" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="6dp"
+        android:layout_gravity="center"
+        android:onClick="secondImageButton"
+        android:scaleType="centerCrop"
+        android:src="@drawable/noticiaa" />
+
+</LinearLayout>

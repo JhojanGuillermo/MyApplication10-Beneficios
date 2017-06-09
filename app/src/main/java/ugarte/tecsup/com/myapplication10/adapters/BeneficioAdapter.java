@@ -1,6 +1,5 @@
-package ugarte.tecsup.com.myapplication10;
+package ugarte.tecsup.com.myapplication10.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +12,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ugarte.tecsup.com.myapplication10.models.Beneficio;
+import ugarte.tecsup.com.myapplication10.R;
 
 /**
  * Created by JShanksX13 on 9/06/2017.

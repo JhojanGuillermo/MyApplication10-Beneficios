@@ -1,4 +1,4 @@
-package ugarte.tecsup.com.myapplication10;
+package ugarte.tecsup.com.myapplication10.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,17 +12,22 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import ugarte.tecsup.com.myapplication10.apiServices.ApiService;
+import ugarte.tecsup.com.myapplication10.apiServices.ApiServiceGenerator;
+import ugarte.tecsup.com.myapplication10.models.Beneficio;
+import ugarte.tecsup.com.myapplication10.adapters.BeneficioAdapter;
+import ugarte.tecsup.com.myapplication10.R;
 
-public class MainActivity extends AppCompatActivity {
+public class BeneficioActivity extends AppCompatActivity {
 
-    private static final String TAG =  MainActivity.class.getSimpleName();
+    private static final String TAG =  BeneficioActivity.class.getSimpleName();
 
     private RecyclerView beneficiosList;
 
       @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_beneficio);
 
           beneficiosList = (RecyclerView) findViewById(R.id.beneficios_list);
 
@@ -64,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Throwable t) {
                     try {
                         Log.e(TAG, "onThrowable: " + t.toString(), t);
-                        Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(BeneficioActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
                     }catch (Throwable x){}
                 }
             }
@@ -72,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Beneficio>> call, Throwable t) {
                 Log.e(TAG, "onFailure: " + t.toString());
-                Toast.makeText(MainActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(BeneficioActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
 
         });

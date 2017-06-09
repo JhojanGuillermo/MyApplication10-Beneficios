@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp">
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <ImageView
+            android:id="@+id/picture_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/ic_profnoticias" />
+
+        <TextView
+            android:id="@+id/tema"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_toEndOf="@+id/picture_image"
+            android:background="#ff4d00"
+            android:text="TEMA"
+            android:textColor="#fff"
+            android:textSize="12dp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tema"
+            android:layout_toEndOf="@+id/picture_image"
+            android:text="Nombres del Evento"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#007bff"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_clocknoticias"
+            android:layout_below="@+id/titulo"
+            android:layout_toEndOf="@+id/picture_image"/>
+
+        <TextView
+            android:id="@+id/fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titulo"
+            android:layout_toEndOf="@+id/picture_image"
+            android:layout_marginLeft="16dp"
+            android:text="12/05/08"
+            android:textColor="#ff3700"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
