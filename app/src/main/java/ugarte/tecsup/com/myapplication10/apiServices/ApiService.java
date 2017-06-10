@@ -25,14 +25,16 @@ public interface ApiService {
 
     @GET("api/v1/usuarios")
     Call<List<Usuario>>getUsuarios();
+
     @Multipart
     @POST("api/v1/usuarios/login")
     Call<ResponseMessage> login(
             @Part("username") RequestBody username,
             @Part("password") RequestBody password
     );
+
     @Multipart
-    @POST("api/v1/usuarios/")
+    @POST("api/v1/usuarios")
     Call<ResponseMessage> register(
             @Part("nombre") RequestBody nombre,
             @Part("apellidos") RequestBody apellidos,

@@ -3,6 +3,7 @@ package ugarte.tecsup.com.myapplication10.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -36,19 +37,21 @@ public class RegisterActivity extends AppCompatActivity {
         passwordRegister = (EditText) findViewById(R.id.registerpassword);
     }
 
-    public void registrarUsuario(){
+    public void registrarUsuario(View view){
         String nombre = nombreRegister.getText().toString();
         String apellidos = apellidosRegister.getText().toString();
         String email = emailRegister.getText().toString();
         String username = usernameRegister.getText().toString();
         String password = passwordRegister.getText().toString();
         ApiService service = ApiServiceGenerator.createService(ApiService.class);
+
         Call<ResponseMessage> call = null;
         RequestBody nombrePart = RequestBody.create(MultipartBody.FORM, nombre);
         RequestBody apellidosPart = RequestBody.create(MultipartBody.FORM, apellidos);
         RequestBody emailPart = RequestBody.create(MultipartBody.FORM, email);
         RequestBody passwordPart = RequestBody.create(MultipartBody.FORM, password);
         RequestBody usernamePart = RequestBody.create(MultipartBody.FORM, username);
+
         call = service.register(nombrePart, apellidosPart,emailPart,passwordPart,usernamePart);
         call.enqueue(new Callback<ResponseMessage>() {
             @Override
@@ -61,6 +64,8 @@ public class RegisterActivity extends AppCompatActivity {
                     if (response.isSuccessful()) {
                         ResponseMessage responseMessage = response.body();
                         Log.d(TAG, "responseMessage: " + responseMessage);
+                        Toast.makeText(RegisterActivity.this, "Registro Completo", Toast.LENGTH_SHORT).show();
+                        finish();
                     } else {
                         Log.e(TAG, "onError: " + response.errorBody().string());
                         throw new Exception("Faltan datos");
