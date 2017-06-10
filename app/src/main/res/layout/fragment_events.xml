@@ -8,6 +8,5 @@
         android:paddingTop="6dp"
         android:id="@+id/eventos_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/ubicacion" />
+        android:layout_height="match_parent" />
 </RelativeLayout>
