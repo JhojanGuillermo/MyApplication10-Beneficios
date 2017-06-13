@@ -17,13 +17,16 @@ public class Event {
 
     private String imagen;
 
-    public Event(Integer id, String titulo, String fecha, String lugar,String descripcion, String imagen){
+    private int asistentes;
+
+    public Event(Integer id, String titulo, String fecha, String lugar,String descripcion, String imagen, int asistentes){
         this.id = id;
         this.titulo = titulo;
         this.fecha = fecha;
         this.lugar = lugar;
         this.descripcion = descripcion;
         this.imagen = imagen;
+        this.asistentes = asistentes;
     }
 
 
@@ -71,6 +74,10 @@ public class Event {
         this.imagen = imagen;
     }
 
+    public int getAsistentes() { return asistentes; }
+
+    public void setAsistentes(int asistentes) { this.asistentes = asistentes; }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -80,6 +87,7 @@ public class Event {
                 ", lugar='" + lugar + '\'' +
                 ", descripcion= '" + descripcion + '\'' +
                 ", imagen='" + imagen + '\'' +
+                ", asistentes='" + asistentes + '\'' +
                 '}';
     }
 

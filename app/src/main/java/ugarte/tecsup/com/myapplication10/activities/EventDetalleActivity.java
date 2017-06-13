@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CheckBox;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,17 +27,7 @@ public class EventDetalleActivity extends AppCompatActivity {
 
     private static final String TAG = EventDetalleActivity.class.getSimpleName();
 
-
     private int id;
-    private String titulo;
-
-    private String fecha;
-
-    private String lugar;
-
-    private String descripcion;
-
-    private String imagen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

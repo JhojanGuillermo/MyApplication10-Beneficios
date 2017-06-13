@@ -1,115 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="ugarte.tecsup.com.myapplication10.activities.EventDetalleActivity">
 
     <RelativeLayout
-        android:id="@+id/sec_det"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/portada_img"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_imgportadaevent"
-            android:maxHeight="30dp" />
-
-        <TextView
-            android:id="@+id/titulo_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/portada_img"
-            android:layout_marginLeft="12dp"
-            android:text="Detalles del evento"
-            android:textColor="#000dff"
-            android:textSize="22dp"
-
-            android:textStyle="bold" />
-
         <RelativeLayout
-            android:id="@+id/realizar"
+            android:id="@+id/sec_det"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/titulo_text"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="6dp">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/fecha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_clockevent" />
-
-            <TextView
-                android:id="@+id/fechaText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/fecha"
-                android:textSize="14dp"
-                android:textStyle="italic"
-                android:layout_marginBottom="2dp"
-                android:text=" Fecha"/>
-
-            <TextView
-                android:id="@+id/lugar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/fechaText"
-                android:drawableLeft="@drawable/ic_locationevent"
-                />
-
-            <TextView
-                android:id="@+id/lugarText"
+            <ImageView
+                android:id="@+id/portada_img"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/lugar"
-                android:layout_below="@+id/fechaText"
-                android:layout_marginTop="3dp"
-                android:textSize="14dp"
-                android:textStyle="italic"
-                android:text="Lugar"/>
+                android:background="@drawable/ic_imgportadaevent"
+                android:maxHeight="30dp" />
+
+            <TextView
+                android:id="@+id/titulo_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/portada_img"
+                android:layout_marginLeft="12dp"
+                android:text="Detalles del evento"
+                android:textColor="#000dff"
+                android:textSize="22dp"
+
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/realizar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titulo_text"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="6dp">
+
+                <TextView
+                    android:id="@+id/fecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_clockevent" />
+
+                <TextView
+                    android:id="@+id/fechaText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_toEndOf="@+id/fecha"
+                    android:text=" Fecha"
+                    android:textSize="14dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/lugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fechaText"
+                    android:drawableLeft="@drawable/ic_locationevent" />
+
+                <TextView
+                    android:id="@+id/lugarText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fechaText"
+                    android:layout_marginTop="3dp"
+                    android:layout_toEndOf="@+id/lugar"
+                    android:text="Lugar"
+                    android:textSize="14dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/asistenciaText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toEndOf="@+id/fechaText"
+                    android:gravity="end"
+                    android:text="Numero de Asistentes"
+                    android:textSize="14dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/nro_asistentes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/asistenciaText"
+                    android:layout_below="@id/asistenciaText"
+                    android:layout_marginRight="45dp"
+                    android:drawableLeft="@drawable/ic_asistencia"
+                    android:text="999"
+                    android:textColor="#ff7300"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/descripcion_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/realizar"
+                android:layout_marginBottom="14dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="14dp"
+                android:text="Descripcion" />
+
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/descripcion_text"
+        <RelativeLayout
+            android:id="@+id/sec_cal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/realizar"
-            android:layout_marginBottom="14dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="14dp"
-            android:text="Descripcion" />
+            android:layout_below="@id/sec_det">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/calificacionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="CALIFICACION"
+                android:textColor="#3141ef"
+                android:textSize="16dp"
+                android:textStyle="bold|italic" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/sec_det">
-        <TextView
-            android:id="@+id/tit_galeria"
+            <RatingBar
+                android:id="@+id/calificacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/calificacionText"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:numStars="5" />
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:text="GALERIA" />
+            android:layout_below="@id/sec_cal">
 
-        <GridView
-            android:id="@+id/gridView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/tit_galeria"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:columnWidth="100dp"
-            android:horizontalSpacing="5dp"
-            android:numColumns="auto_fit"
-            android:stretchMode="columnWidth"
-            android:verticalSpacing="5dp"></GridView>
+            <TextView
+                android:id="@+id/tit_galeria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="GALERIA"
+                android:textColor="#3141ef"
+                android:textSize="16dp"
+                android:textStyle="bold|italic" />
+
+            <GridView
+                android:id="@+id/gridView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tit_galeria"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:columnWidth="100dp"
+                android:horizontalSpacing="5dp"
+                android:numColumns="auto_fit"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="5dp"></GridView>
+        </RelativeLayout>
     </RelativeLayout>
-
-</RelativeLayout>
+</ScrollView>

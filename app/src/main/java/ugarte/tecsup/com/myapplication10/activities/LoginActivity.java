@@ -23,7 +23,6 @@ import ugarte.tecsup.com.myapplication10.models.ResponseMessage;
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
-
     private EditText usernameInput;
     private EditText passwordInput;
     private SharedPreferences sharedPreferences;

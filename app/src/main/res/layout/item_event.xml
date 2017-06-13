@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
@@ -72,8 +73,17 @@
             android:layout_marginTop="3dp"
             android:textSize="12sp"
             android:textStyle="italic"
-            android:text="Lugar"
-            android:layout_marginBottom="6dp"/>
+            android:text="Lugar"/>
+
+        <CheckBox
+            android:id="@+id/participar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/fullname_text"
+            android:layout_below="@id/fullname_text"
+            android:layout_marginRight="15dp"
+            android:checked="false"
+            android:button="@drawable/boton_checkbox"/>
 
 
     </RelativeLayout>

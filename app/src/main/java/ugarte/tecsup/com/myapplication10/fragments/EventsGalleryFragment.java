@@ -1,19 +1,16 @@
 package ugarte.tecsup.com.myapplication10.fragments;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import java.util.List;
+import android.widget.CalendarView;
+import android.widget.Toast;
 
 import ugarte.tecsup.com.myapplication10.R;
-import ugarte.tecsup.com.myapplication10.adapters.EventsGalAdapter;
-import ugarte.tecsup.com.myapplication10.models.EventGal;
-import ugarte.tecsup.com.myapplication10.repositories.EventRepository;
 
 /**
  * Created by JShanksX13 on 9/06/2017.
@@ -21,28 +18,22 @@ import ugarte.tecsup.com.myapplication10.repositories.EventRepository;
 
 public class EventsGalleryFragment extends Fragment {
 
-    private RecyclerView eventsGalList;
+    CalendarView calendar;
 
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_events_gallery, container, false);
 
+        calendar = (CalendarView) view.findViewById(R.id.calendar_events);
 
+        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
 
-        // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_events_gallery, container, false);
-
-
-        eventsGalList = (RecyclerView) view.findViewById(R.id.eventosGallery_list);
-
-        eventsGalList.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        List<EventGal> eventsGal = EventRepository.getEventsGal();
-        eventsGalList.setAdapter(new EventsGalAdapter(eventsGal));
-
+                Toast.makeText(getActivity().getBaseContext(), "Selected date" +dayOfMonth+"/"+month+"/"+year, Toast.LENGTH_LONG).show();
+            }
+        });
         return view;
-
-
-
     }
-
 }
