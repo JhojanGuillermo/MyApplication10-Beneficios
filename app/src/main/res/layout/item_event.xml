@@ -79,9 +79,9 @@
             android:id="@+id/participar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@id/fullname_text"
+            android:layout_alignRight="@id/lugar_text"
             android:layout_below="@id/fullname_text"
-            android:layout_marginRight="15dp"
+            android:layout_marginRight="10dp"
             android:checked="false"
             android:button="@drawable/boton_checkbox"/>
 
