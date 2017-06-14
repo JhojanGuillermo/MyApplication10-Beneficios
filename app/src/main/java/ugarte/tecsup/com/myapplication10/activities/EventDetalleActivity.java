@@ -54,10 +54,10 @@ public class EventDetalleActivity extends AppCompatActivity {
 //            lugEvent.setText(lugar);
 //        TextView descEvent = (TextView) findViewById(R.id.descripcion_text);
 //            descEvent.setText(descripcion);
-        GridView gridView = (GridView) findViewById(R.id.gridView);
+        //GridView gridView = (GridView) findViewById(R.id.gridView);
         //textView.setText("EventDetalleActivity " + id);
 
-        gridView.setAdapter(new ImageAdapter(this));
+        //gridView.setAdapter(new ImageAdapter(this));
 
 //        TextView titEvent = (TextView) findViewById(R.id.titulo_text);
 //            titEvent.setText(event.getTitulo());
@@ -71,14 +71,14 @@ public class EventDetalleActivity extends AppCompatActivity {
 //        int idPortada = this.getResources().getIdentifier(event.getImagen(), "drawable", this.getPackageName());
 //        img.setImageResource(idPortada);
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getApplicationContext(), ugarte.tecsup.com.myapplication10.activities.FullImageActivity.class);
-                i.putExtra("id", position);
-                startActivity(i);
-            }
-        });
+//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Intent i = new Intent(getApplicationContext(), ugarte.tecsup.com.myapplication10.activities.FullImageActivity.class);
+//                i.putExtra("id", position);
+//                startActivity(i);
+//            }
+//        });
 
         initialize();
     }

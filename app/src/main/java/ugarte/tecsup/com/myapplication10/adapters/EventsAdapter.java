@@ -123,6 +123,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
 
                 if(checkbox.isChecked()){
                     Log.d(TAG, "CHECKED!!");
+                    Toast.makeText(EventsAdapter.this.activity, "Asistencia confirmada", Toast.LENGTH_SHORT).show();
                     ApiService service = ApiServiceGenerator.createService(ApiService.class);
                     service.asistencias(sharedPreferences.getString("username", null), event.getId()).enqueue(new Callback<ResponseMessage>() {
                         @Override
@@ -159,8 +160,10 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
                         }
                     });
 
+
                 }else{
                     Log.d(TAG, "NO CHECKED!!");
+                    Toast.makeText(EventsAdapter.this.activity, "Asistencia cancelada", Toast.LENGTH_SHORT).show();
                     ApiService service = ApiServiceGenerator.createService(ApiService.class);
                     service.inasistencias(sharedPreferences.getString("username", null), event.getId()).enqueue(new Callback<ResponseMessage>() {
                         @Override
@@ -196,6 +199,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
                             Toast.makeText(EventsAdapter.this.activity, t.getMessage(), Toast.LENGTH_LONG).show();
                         }
                     });
+
                 }
 
             }
