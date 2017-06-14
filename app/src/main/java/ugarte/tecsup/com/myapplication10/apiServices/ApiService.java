@@ -4,6 +4,8 @@ import java.util.List;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -33,6 +35,20 @@ public interface ApiService {
             @Part("password") RequestBody password
     );
 
+    @FormUrlEncoded
+    @POST("api/v1/eventos/asistencias")
+    Call<ResponseMessage> asistencias(
+            @Field("username") String username,
+            @Field("id") Integer id
+    );
+
+    @FormUrlEncoded
+    @POST("api/v1/eventos/inasistencias")
+    Call<ResponseMessage> inasistencias(
+            @Field("username") String username,
+            @Field("id") Integer id
+    );
+
     @Multipart
     @POST("api/v1/usuarios")
     Call<ResponseMessage> register(
@@ -60,5 +76,7 @@ public interface ApiService {
 
     @GET("api/v1/eventos/{id}")
     Call<Event> getEvent(@Path("id") Integer id);
+
+
 }
 

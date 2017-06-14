@@ -10,25 +10,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import ugarte.tecsup.com.myapplication10.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    private SharedPreferences sharedPreferences;
     public static final String SHARED_PREFERENCE_NAME = "MyApp";
 
     ImageButton noticias;
     ImageButton eventos;
     ImageButton beneficios;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         beneficios = (ImageButton) findViewById(R.id.imageButton2);
-        beneficios.setOnClickListener(new View.OnClickListener(){
+        beneficios.setOnClickListener(new View.OnClickListener() {
 
 
             public void onClick(View v) {
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_logout:
                 callLogout(null);
                 return true;
@@ -73,12 +74,14 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void callLogout(View view){
+    private void callLogout(View view) {
         Log.d(TAG, "Loged");
-            SharedPreferences settings = getSharedPreferences(SHARED_PREFERENCE_NAME, 0);
-            SharedPreferences.Editor editor = settings.edit();
-            editor.remove("islogged");
-            editor.commit();
-            finish();
+        SharedPreferences settings = getSharedPreferences(SHARED_PREFERENCE_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.remove("islogged");
+        //Toast.makeText(MainActivity.this, "Nos vemos!", Toast.LENGTH_SHORT).show();
+        editor.commit();
+        //finish();
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
     }
 }
